@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "976007199910",
+    "firebase_url": "https://encrochat-87bcd.firebaseio.com",
+    "project_id": "encrochat-87bcd",
+    "storage_bucket": "encrochat-87bcd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:976007199910:android:071cc9cb64dffc32cb4867",
+        "android_client_info": {
+          "package_name": "com.ctyx.encrochat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "976007199910-t4jonregqgm5itscqhg4pcl3elq64uui.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ctyx.encrochat",
+            "certificate_hash": "1c94027fe3ce605bc1d401d9a029e777fe8c318b"
+          }
+        },
+        {
+          "client_id": "976007199910-6r11rmbv711hqcj8r8ljkk49ii47nrnp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyADLDnmZxqlv7sKThfwpyopRx8vZRe-N_E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "976007199910-6r11rmbv711hqcj8r8ljkk49ii47nrnp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
