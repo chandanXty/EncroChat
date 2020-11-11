@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".SettingsActivity">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+
+
+        android:id="@+id/dp_picture_settings"
+        android:layout_width="198dp"
+        android:layout_height="206dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="55dp"
+        android:src="@drawable/dpdefault"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/name_settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:shadowColor="@color/common_google_signin_btn_text_dark_default"
+        android:text="Display Name"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:textSize="40dp" />
+
+    <TextView
+        android:id="@+id/status_in_settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="289dp"
+        android:text="Hi There! I am using Encrochat!"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/change_pic_butt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="166dp"
+        android:backgroundTint="@color/colorAccent"
+        android:text="Change Picture"
+        android:textColor="@color/common_google_signin_btn_text_dark_default" />
+
+    <Button
+        android:id="@+id/change_status_butt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="97dp"
+        android:backgroundTint="@color/common_google_signin_btn_text_dark_default"
+        android:text="Change Status" />
+
+</RelativeLayout>

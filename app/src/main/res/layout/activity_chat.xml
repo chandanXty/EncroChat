@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/backgr"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#006064"
+    android:backgroundTint="#006064"
+    tools:context=".ChatActivity">
+
+
+    <include
+        android:id="@+id/chat_toolbar"
+        layout="@layout/app_bar_layout"></include>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/messages_list"
+        android:layout_width="match_parent"
+        android:layout_height="612dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="58dp"
+        android:background="?attr/colorButtonNormal"
+        android:backgroundTint="?attr/colorButtonNormal">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <ImageButton
+        android:id="@+id/chat_send_button"
+        android:layout_width="74dp"
+        android:layout_height="61dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="1dp"
+        android:layout_weight="1"
+        app:srcCompat="@drawable/baseline_send_black_24dp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/chat_message_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="339dp">
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/chat_message_box"
+        android:layout_width="347dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="68dp"
+        android:layout_marginBottom="1dp"
+        android:background="@drawable/common_google_signin_btn_icon_dark_normal_background"
+        android:hint="Type Your Message Here" />
+
+
+</RelativeLayout>

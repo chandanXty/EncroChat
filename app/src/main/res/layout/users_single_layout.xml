@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="13dp"
+        android:src="@drawable/dpdefault"></de.hdodenhof.circleimageview.CircleImageView>
+
+    <TextView
+        android:id="@+id/users_single_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="17dp"
+        android:scrollbarSize="20dp"
+        android:text="DisplayName"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textSize="22dp" />
+
+    <TextView
+        android:id="@+id/user_single_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="53dp"
+        android:text="Default Status" />
+
+
+</RelativeLayout>

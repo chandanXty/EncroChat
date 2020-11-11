@@ -1,6 +1,9 @@
 package com.ctyx.encrochat;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
@@ -8,7 +11,12 @@ import android.widget.ListView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.viewpager.widget.ViewPager;
 
+import com.google.android.material.tabs.TabLayout;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -27,7 +35,15 @@ import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.NoSuchPaddingException;
 import javax.crypto.spec.SecretKeySpec;
 
+//import android.widget.Toolbar;
+
 public class MainActivity extends AppCompatActivity {
+
+
+    private FirebaseAuth mAuth; // FOR USER AUTHENTICATION
+
+    private  Toolbar mToolbar;
+
 
     private EditText eText;
     private ListView lView;
@@ -40,6 +56,11 @@ public class MainActivity extends AppCompatActivity {
     private SecretKeySpec secretKeySpec;
 
 
+    private ViewPager mViewPager;
+    private SectionsPagerAdapter mSectionPagerAdapter;
+    private TabLayout mTabLayout;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +68,25 @@ public class MainActivity extends AppCompatActivity {
 
         eText = findViewById(R.id.editText);
         lView = findViewById(R.id.listView);
+
+        // Initialize Firebase Auth
+        mAuth = FirebaseAuth.getInstance();
+
+        mToolbar = (Toolbar) findViewById(R.id.main_page_toolbar);
+        setSupportActionBar(mToolbar);
+        getSupportActionBar().setTitle("EncroChat");
+
+        mViewPager =(ViewPager) findViewById(R.id.main_pager);
+        mSectionPagerAdapter= new SectionsPagerAdapter(getSupportFragmentManager());
+
+        mViewPager.setAdapter(mSectionPagerAdapter);
+        mTabLayout=(TabLayout) findViewById(R.id.main_tab);
+        mTabLayout.setupWithViewPager(mViewPager);
+
+
+
+
+
 
         try{
             databaseReference = FirebaseDatabase.getInstance().getReference("Message");
@@ -98,6 +138,59 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
+    }
+   /********  Checking for user Authentication Otherwise sent to Login Page*****/
+    @Override
+    public void onStart() {
+        super.onStart();
+        // Check if user is signed in (non-null) and update UI accordingly.
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+
+        if (currentUser == null)
+        {
+           sendtostart();
+        }
+
+    }
+
+    private void sendtostart(){
+        Intent startIntent= new Intent(MainActivity.this,StartAct.class);
+        startActivity(startIntent);
+        finish();
+    }
+
+
+     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        super.onCreateOptionsMenu(menu);
+
+        getMenuInflater().inflate(R.menu.main_menu,menu);
+
+
+        return true;
+
+     }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+       super.onOptionsItemSelected(item);
+       if (item.getItemId() == R.id.main_logout){
+           FirebaseAuth.getInstance().signOut();
+           sendtostart();}
+        if (item.getItemId() == R.id.menu_setting){
+            Intent settings_intent= new Intent(MainActivity.this,SettingsActivity.class);
+            startActivity(settings_intent);
+        }
+        if (item.getItemId() == R.id.users_in_menu){
+            Intent users_intent= new Intent(MainActivity.this,UsersActivity.class);
+            startActivity(users_intent);
+
+        }
+
+
+
+
+       return true;
     }
 
     public void sendButton(View view){

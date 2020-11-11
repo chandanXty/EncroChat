@@ -6,10 +6,43 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+    <include
+        android:id="@+id/main_page_toolbar"
+        layout="@layout/app_bar_layout"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="false"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="56dp" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/main_tab"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></com.google.android.material.tabs.TabLayout>
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/main_pager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="103dp"></androidx.viewpager.widget.ViewPager>
+
     <ListView
         android:id="@+id/listView"
-        android:layout_width="match_parent"
-        android:layout_height="500dp" />
+        android:layout_width="289dp"
+        android:layout_height="294dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="128dp" />
 
     <EditText
         android:id="@+id/editText"
